@@ -1,0 +1,12 @@
+- hosts: web
+  user: root
+  gather_facts: no
+  become: yes
+  vars_files: ../vars/vars.yml
+
+  tasks:
+    - name: htmlファイルをtxtに変換
+      shell: cat {{ contents_path }}{{ target_file_name }}.html  >> {{ target_file_name }}.txt
+
+    - name: 変換したtxtファイルを収集SVにscp
+      shell: scp -i {{ home_dir }}.ssh/id_rsa {{ git_dir }}{{ target_file_name }}
