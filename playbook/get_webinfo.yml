@@ -4,7 +4,7 @@
   vars_files: ../vars/vars.yml
 
   tasks:
-    - name: Check the yml file for updates
+    - name: check the yml file for updates
     　shell: cd ~/WebInfo_Manege && git pull
      
     - name: make new git branch
@@ -17,7 +17,7 @@
   vars_files: ../vars/vars.yml
 
   tasks:
-    - name: Convert html file to txt
+    - name: convert html file to txt
       shell: cat {{ contents_path }}{{ target_file_name }}.html  > {{ contents_path }}{{ target_file_name }}_`date +%Y%m%d`.txt
 
     - name: txt files scp to CollectSV
@@ -29,14 +29,14 @@
   vars_files: ../vars/vars.yml
 
   tasks:
-    - name: Commit additional files
+    - name: commit additional files
       shell: cd ~/WebInfo_Manage && git add .
 
     - name: add commit message
       shell: git commit -m "`date +%Y%m%d`_GetWebInfo"
 
-    - name: Push today's branch
+    - name: push today's branch
       shell: git push origin `date +%Y%m%d`
 
-    - name: Delete local Branch
+    - name: delete local Branch
       shell: git checkout main && git branch -D `date +%Y%m%d`
