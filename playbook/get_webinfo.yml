@@ -5,10 +5,10 @@
 
   tasks:
     - name: check the yml file for updates
-      shell: cd ~/WebInfo_Manage && git pull
+      shell: cd {{ ansible_home_dir }} && git pull
      
     - name: make new git branch
-      shell: cd ~/WebInfo_Manage && git checkout -b `date +%Y%m%d`
+      shell: cd {{ ansible_home_dir }} && git checkout -b `date +%Y%m%d`
 
 - hosts: web
   gather_facts: yes
@@ -30,7 +30,7 @@
 
   tasks:
     - name: commit additional files
-      shell: cd ~/WebInfo_Manage && git add .
+      shell: cd {{ ansible_home_dir }} && git add .
 
     - name: add commit message
       shell: git commit -m "`date +%Y%m%d`_GetWebInfo"
