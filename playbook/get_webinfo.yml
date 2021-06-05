@@ -36,4 +36,4 @@
       shell: git push origin `date +%Y%m%d`
 
     - name: Delete local Branch
-      shell: git branch -D `date +%Y%m%d`
+      shell: git checkout main && git branch -D `date +%Y%m%d`
