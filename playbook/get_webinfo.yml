@@ -4,6 +4,9 @@
   vars_files: ../vars/vars.yml
 
   tasks:
+    - name: Check the yml file for updates
+    　shell: cd ~/WebInfo_Manege && git pull
+     
     - name: make new git branch
       shell: cd ~/WebInfo_Manage && git checkout -b `date +%Y%m%d`
 
