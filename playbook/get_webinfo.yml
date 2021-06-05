@@ -27,10 +27,13 @@
 
   tasks:
     - name: Commit additional files
-      shell: git add .
+      shell: cd ~/WebInfo && git add .
 
     - name: add commit message
       shell: git commit -m "`date +%Y%m%d`_GetWebInfo"
 
     - name: Push today's branch
       shell: git push origin `date +%Y%m%d`
+
+    - name: Delete local Branch
+      shell: git branch -D `date +%Y%m%d`
