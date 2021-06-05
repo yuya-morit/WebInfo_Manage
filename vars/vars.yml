@@ -1,4 +1,5 @@
-home_dir: /home/ansible/
+ansible_home_dir: /home/ansible/
+web_home_dir: /root/
 git_dir: /home/ansible/WebInfo_Manage/outputs
 target_file_path: /var/lib/jenkins/workspace/automatic_content_distribution/
 target_file_name: web_get
