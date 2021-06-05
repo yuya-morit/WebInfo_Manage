@@ -5,7 +5,7 @@
 
   tasks:
     - name: check the yml file for updates
-    　shell: cd ~/WebInfo_Manege && git pull
+    　shell: cd ~/WebInfo_Manage && git pull
      
     - name: make new git branch
       shell: cd ~/WebInfo_Manage && git checkout -b `date +%Y%m%d`
