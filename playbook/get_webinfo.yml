@@ -15,7 +15,7 @@
 
   tasks:
     - name: Convert html file to txt
-      shell: cat {{ contents_path }}{{ target_file_name }}.html  >> {{ contents_path }}{{ target_file_name }}_`date +%Y%m%d`.txt
+      shell: cat {{ contents_path }}{{ target_file_name }}.html  > {{ contents_path }}{{ target_file_name }}_`date +%Y%m%d`.txt
 
     - name: txt files scp to CollectSV
       shell: scp {{ contents_path }}{{ target_file_name }}_`date +%Y%m%d`.txt ansible@192.168.33.200:{{ git_dir }}
