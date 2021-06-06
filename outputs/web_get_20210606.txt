@@ -1,0 +1,25 @@
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>毎日取得用ページ</title>
+</head>
+<body>
+  <h1>これは毎日取得するためのページです
+<span id="view_time"></span>
+
+<script type="text/javascript">
+document.getElementById("view_time").innerHTML = getNow();
+
+function getNow() {
+	var now = new Date();
+	var year = now.getFullYear();
+	var mon = now.getMonth()+1; //１を足すこと
+	var day = now.getDate();
+	//出力用
+	var s = "今日は" +year + "年" + mon + "月" + day + "日"; 
+	return s;
+}
+</script>。</h1>
+  <p>これが取得できていればOK。問題なく設定できている証拠。</p>
+</body>
+</html>
